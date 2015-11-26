@@ -25,7 +25,7 @@ rankall <- function(outcome, num = "best") {
   for (i in 1:length(stateList)) {
     ## statedata subsets data by the considered state
     statedata <- outcomeData [grep(stateList[i],outcomeData$State),]
-    orderdata <- statedata[order(statedata[,col2use],statedata[,2],na.last = NA),]
+    orderdata <- statedata[order(statedata[,col2use],statedata[,2],decreasing=FALSE,na.last = NA),]
     if (FALSE && i == 2) {
       print(head(statedata[,c(2,7,col2use)]))
       print(head(orderdata[,c(2,7,col2use)]))
